@@ -2,7 +2,7 @@
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
 - **Base:** `docs/INTENT.md`, `docs/specs/SPEC-01` a `SPEC-09`, `AGENTS.md`
-- **Rastreabilidade:** cada item P-NNN vira uma Issue real no GitHub. Após a criação, a coluna "Issue" da §5 recebe o número `#N` e o link; a pasta do desafio usa o número da Issue no GitHub (`desafios/issue-NNN/`).
+- **Rastreabilidade:** cada item P-NNN é uma Issue real em [IntegraMaker/GerLab](https://github.com/IntegraMaker/GerLab/issues) (coluna "Issue" da §5), adicionada como card vinculado no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1) (visões Board e Tabela; colunas Backlog, Ready, In Progress, In Review, Done). A pasta do desafio usa o número da Issue (`desafios/issue-NNN/`).
 
 ## 1. Stack (AGENTS.md) e bibliotecas aprovadas
 
@@ -91,43 +91,43 @@ Cada Issue usará o modelo obrigatório do `AGENTS.md` (atividades, validação 
 
 | ID | Issue | Título | SPEC | Depende de |
 | :--- | :--- | :--- | :--- | :--- |
-| P-001 | — | Preparar ambiente e estrutura inicial | 01 | — |
-| P-002 | — | Modelo de usuário, hash de senha e `flask criar-admin` | 02 | 001 |
-| P-003 | — | Auditoria (LogEvento) e base da exclusão lógica | 01 | 002 |
-| P-004 | — | Login, logout e sessão | 02 | 002 |
-| P-005 | — | Limite de tentativas de login | 02 | 004 |
-| P-006 | — | Autorização por perfil e respostas 403/409 | 01 | 004 |
-| P-007 | — | Fila de e-mails e serviço de envio | 08 | 001 |
-| P-008 | — | Notificações no sistema | 08 | 006 |
-| P-009 | — | Cadastro por domínio e pedido de Administrador no cadastro | 02 | 003, 007 |
-| P-010 | — | Confirmação de conta e reenvio do link | 02 | 009, 008 |
-| P-011 | — | Recuperação de senha | 02 | 010 |
-| P-012 | — | Minha conta: alterar senha e solicitar perfil Administrador | 02 | 010 |
-| P-013 | — | Categorias e carga inicial | 03 | 003, 006 |
-| P-014 | — | Salas (criar, editar, excluir) | 03 | 013 |
-| P-015 | — | Serviço de upload de imagens | 03 | 006 |
-| P-016 | — | Equipamentos e periféricos | 03 | 014, 015 |
-| P-017 | — | Dashboard de laboratórios | 04 | 016 |
-| P-018 | — | Planta em escala e popover | 04 | 016 |
-| P-019 | — | Planta interativa: zoom, pan, teclado e toque | 04 | 018 |
-| P-020 | — | Histórico do equipamento | 04 | 018 |
-| P-021 | — | Mover equipamento na sala | 05 | 019 |
-| P-022 | — | Mover entre salas e transferir periférico | 05 | 021 |
-| P-023 | — | Observações formatadas | 05 | 018 |
-| P-024 | — | Motor de transições de status e concorrência | 06 | 016 |
-| P-025 | — | Registrar e ocultar ocorrência | 06 | 018, 015 |
-| P-026 | — | Reportar falha | 06 | 024, 025, 008 |
-| P-027 | — | Desfazer falso alarme | 06 | 026 |
-| P-028 | — | Solicitar chamado | 07 | 026 |
-| P-029 | — | Abrir chamado | 07 | 028 |
-| P-030 | — | Fila do Administrador e descarte de solicitação | 07 | 029 |
-| P-031 | — | Assumir, resolver, cancelar e tela do chamado | 07 | 030 |
-| P-032 | — | Fechar e reabrir chamado | 07 | 031 |
-| P-033 | — | Exclusão em cascata com solicitações e chamados | 07 | 032 |
-| P-034 | — | Gestão de usuários | 09 | 012, 031 |
-| P-035 | — | Consulta de auditoria | 09 | 003, 006 |
-| P-036 | — | Aviso de privacidade, acessibilidade e responsividade | 01, 04 | 033, 034 |
-| P-037 | — | Validação final do MVP | todas | 036, 035 |
+| P-001 | [#1](https://github.com/IntegraMaker/GerLab/issues/1) | Preparar ambiente e estrutura inicial | 01 | — |
+| P-002 | [#2](https://github.com/IntegraMaker/GerLab/issues/2) | Modelo de usuário, hash de senha e `flask criar-admin` | 02 | 001 |
+| P-003 | [#3](https://github.com/IntegraMaker/GerLab/issues/3) | Auditoria (LogEvento) e base da exclusão lógica | 01 | 002 |
+| P-004 | [#4](https://github.com/IntegraMaker/GerLab/issues/4) | Login, logout e sessão | 02 | 002 |
+| P-005 | [#5](https://github.com/IntegraMaker/GerLab/issues/5) | Limite de tentativas de login | 02 | 004 |
+| P-006 | [#6](https://github.com/IntegraMaker/GerLab/issues/6) | Autorização por perfil e respostas 403/409 | 01 | 004 |
+| P-007 | [#7](https://github.com/IntegraMaker/GerLab/issues/7) | Fila de e-mails e serviço de envio | 08 | 001 |
+| P-008 | [#8](https://github.com/IntegraMaker/GerLab/issues/8) | Notificações no sistema | 08 | 006 |
+| P-009 | [#9](https://github.com/IntegraMaker/GerLab/issues/9) | Cadastro por domínio e pedido de Administrador no cadastro | 02 | 003, 007 |
+| P-010 | [#10](https://github.com/IntegraMaker/GerLab/issues/10) | Confirmação de conta e reenvio do link | 02 | 009, 008 |
+| P-011 | [#11](https://github.com/IntegraMaker/GerLab/issues/11) | Recuperação de senha | 02 | 010 |
+| P-012 | [#12](https://github.com/IntegraMaker/GerLab/issues/12) | Minha conta: alterar senha e solicitar perfil Administrador | 02 | 010 |
+| P-013 | [#13](https://github.com/IntegraMaker/GerLab/issues/13) | Categorias e carga inicial | 03 | 003, 006 |
+| P-014 | [#14](https://github.com/IntegraMaker/GerLab/issues/14) | Salas (criar, editar, excluir) | 03 | 013 |
+| P-015 | [#15](https://github.com/IntegraMaker/GerLab/issues/15) | Serviço de upload de imagens | 03 | 006 |
+| P-016 | [#16](https://github.com/IntegraMaker/GerLab/issues/16) | Equipamentos e periféricos | 03 | 014, 015 |
+| P-017 | [#17](https://github.com/IntegraMaker/GerLab/issues/17) | Dashboard de laboratórios | 04 | 016 |
+| P-018 | [#18](https://github.com/IntegraMaker/GerLab/issues/18) | Planta em escala e popover | 04 | 016 |
+| P-019 | [#19](https://github.com/IntegraMaker/GerLab/issues/19) | Planta interativa: zoom, pan, teclado e toque | 04 | 018 |
+| P-020 | [#20](https://github.com/IntegraMaker/GerLab/issues/20) | Histórico do equipamento | 04 | 018 |
+| P-021 | [#21](https://github.com/IntegraMaker/GerLab/issues/21) | Mover equipamento na sala | 05 | 019 |
+| P-022 | [#22](https://github.com/IntegraMaker/GerLab/issues/22) | Mover entre salas e transferir periférico | 05 | 021 |
+| P-023 | [#23](https://github.com/IntegraMaker/GerLab/issues/23) | Observações formatadas | 05 | 018 |
+| P-024 | [#24](https://github.com/IntegraMaker/GerLab/issues/24) | Motor de transições de status e concorrência | 06 | 016 |
+| P-025 | [#25](https://github.com/IntegraMaker/GerLab/issues/25) | Registrar e ocultar ocorrência | 06 | 018, 015 |
+| P-026 | [#26](https://github.com/IntegraMaker/GerLab/issues/26) | Reportar falha | 06 | 024, 025, 008 |
+| P-027 | [#27](https://github.com/IntegraMaker/GerLab/issues/27) | Desfazer falso alarme | 06 | 026 |
+| P-028 | [#28](https://github.com/IntegraMaker/GerLab/issues/28) | Solicitar chamado | 07 | 026 |
+| P-029 | [#29](https://github.com/IntegraMaker/GerLab/issues/29) | Abrir chamado | 07 | 028 |
+| P-030 | [#30](https://github.com/IntegraMaker/GerLab/issues/30) | Fila do Administrador e descarte de solicitação | 07 | 029 |
+| P-031 | [#31](https://github.com/IntegraMaker/GerLab/issues/31) | Assumir, resolver, cancelar e tela do chamado | 07 | 030 |
+| P-032 | [#32](https://github.com/IntegraMaker/GerLab/issues/32) | Fechar e reabrir chamado | 07 | 031 |
+| P-033 | [#33](https://github.com/IntegraMaker/GerLab/issues/33) | Exclusão em cascata com solicitações e chamados | 07 | 032 |
+| P-034 | [#34](https://github.com/IntegraMaker/GerLab/issues/34) | Gestão de usuários | 09 | 012, 031 |
+| P-035 | [#35](https://github.com/IntegraMaker/GerLab/issues/35) | Consulta de auditoria | 09 | 003, 006 |
+| P-036 | [#36](https://github.com/IntegraMaker/GerLab/issues/36) | Aviso de privacidade, acessibilidade e responsividade | 01, 04 | 033, 034 |
+| P-037 | [#37](https://github.com/IntegraMaker/GerLab/issues/37) | Validação final do MVP | todas | 036, 035 |
 
 ### Detalhamento
 
@@ -265,7 +265,6 @@ Cada Issue usará o modelo obrigatório do `AGENTS.md` (atividades, validação 
 | :--- | :--- |
 | Envio real de e-mail (P-007 em produção) | Senha de app do Gmail configurada pelo estudante no `.env` |
 | HTTPS e implantação | Servidor e domínio de produção não definidos |
-| Criação de Issues, Project e cards no GitHub | Adiada por decisão do estudante (2026-11-24); a implementação só começa depois (AGENTS.md) |
 
 ## 7. Fora do MVP (backlog futuro, sem Issue agora)
 

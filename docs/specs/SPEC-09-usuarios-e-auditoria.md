@@ -1,6 +1,7 @@
 # SPEC-09 — Gestão de usuários e auditoria
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
+- **Issues:** [#34](https://github.com/IntegraMaker/GerLab/issues/34) P-034, [#35](https://github.com/IntegraMaker/GerLab/issues/35) P-035, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
 - **Fontes:** `spec.md` RF05, RF16, RN07, RNF06; `casos-de-uso.md` UC18, UC24; protótipo tela "Usuários"; entrevista P3, P10.7
 - **Casos de uso:** UC18, UC24
 

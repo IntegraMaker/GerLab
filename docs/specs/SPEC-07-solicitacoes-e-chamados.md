@@ -1,6 +1,7 @@
 # SPEC-07 — Solicitações e chamados técnicos
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
+- **Issues:** [#28](https://github.com/IntegraMaker/GerLab/issues/28) P-028, [#29](https://github.com/IntegraMaker/GerLab/issues/29) P-029, [#30](https://github.com/IntegraMaker/GerLab/issues/30) P-030, [#31](https://github.com/IntegraMaker/GerLab/issues/31) P-031, [#32](https://github.com/IntegraMaker/GerLab/issues/32) P-032, [#33](https://github.com/IntegraMaker/GerLab/issues/33) P-033, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
 - **Fontes:** `spec.md` §2.3, §2.4, RF18, RF19, RF25, RF32, RN02, RN06; `casos-de-uso.md` UC12, UC15, UC16, UC17, UC13 FA2, UC14 FA3; protótipo telas "Fila de chamados" e "Chamado"
 - **Casos de uso:** UC12, UC15, UC16, UC17
 

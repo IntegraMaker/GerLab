@@ -1,6 +1,7 @@
 # SPEC-04 — Dashboard e planta da sala
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
+- **Issues:** [#17](https://github.com/IntegraMaker/GerLab/issues/17) P-017, [#18](https://github.com/IntegraMaker/GerLab/issues/18) P-018, [#19](https://github.com/IntegraMaker/GerLab/issues/19) P-019, [#20](https://github.com/IntegraMaker/GerLab/issues/20) P-020, [#36](https://github.com/IntegraMaker/GerLab/issues/36) P-036, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
 - **Fontes:** `spec.md` RF17, RF22, RF23, RNF02, RNF05, RNF08, §2.1; `casos-de-uso.md` UC05, UC06; protótipo telas "Dashboard", "Planta da sala" e "Celular"; entrevista P6, P9, P10.2–P10.4
 - **Casos de uso:** UC05, UC06
 

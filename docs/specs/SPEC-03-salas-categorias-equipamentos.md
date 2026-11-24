@@ -1,6 +1,7 @@
 # SPEC-03 — Salas, categorias e equipamentos
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
+- **Issues:** [#13](https://github.com/IntegraMaker/GerLab/issues/13) P-013, [#14](https://github.com/IntegraMaker/GerLab/issues/14) P-014, [#15](https://github.com/IntegraMaker/GerLab/issues/15) P-015, [#16](https://github.com/IntegraMaker/GerLab/issues/16) P-016, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
 - **Fontes:** `spec.md` RF06, RF07, RF08, RF11, RF12, RF28, RN02, RN05, RNF07; `casos-de-uso.md` UC13, UC14, UC23; `plan.md` (categorias iniciais, ícones); protótipo telas "Dashboard" e "Planta"; entrevista P7, P8
 - **Casos de uso:** UC13, UC14, UC23
 

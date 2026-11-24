@@ -1,6 +1,7 @@
 # SPEC-02 — Contas e autenticação
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
+- **Issues:** [#2](https://github.com/IntegraMaker/GerLab/issues/2) P-002, [#4](https://github.com/IntegraMaker/GerLab/issues/4) P-004, [#5](https://github.com/IntegraMaker/GerLab/issues/5) P-005, [#9](https://github.com/IntegraMaker/GerLab/issues/9) P-009, [#10](https://github.com/IntegraMaker/GerLab/issues/10) P-010, [#11](https://github.com/IntegraMaker/GerLab/issues/11) P-011, [#12](https://github.com/IntegraMaker/GerLab/issues/12) P-012, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
 - **Fontes:** `spec.md` §1.2, §2.5, RF01–RF04, RF26, RF27, RNF04; `casos-de-uso.md` UC01–UC04, UC20; protótipo telas "Login" e "Cadastro"; entrevista P1, P10.1
 - **Casos de uso:** UC01, UC02, UC03, UC04, UC20
 

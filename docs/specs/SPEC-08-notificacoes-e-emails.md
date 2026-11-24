@@ -1,6 +1,7 @@
 # SPEC-08 — Notificações e e-mails
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
+- **Issues:** [#7](https://github.com/IntegraMaker/GerLab/issues/7) P-007, [#8](https://github.com/IntegraMaker/GerLab/issues/8) P-008, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
 - **Fontes:** `spec.md` RF20, RF21, RN04; `casos-de-uso.md` UC07; protótipo (contador de notificações no cabeçalho, "Avisos" no celular); entrevista P4 (opção B), P5
 - **Casos de uso:** UC07
 
