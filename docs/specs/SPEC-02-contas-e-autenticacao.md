@@ -6,7 +6,7 @@
 
 ## 1. Objetivo
 
-Permitir que pessoas com e-mail institucional do IFPB criem conta, confirmem, entrem, recuperem e alterem a senha, encerrem a sessão e (Servidores) solicitem o perfil de Administrador.
+Permitir que pessoas com e-mail institucional (`@ifpb.edu.br` ou `@academico.ifpb.edu.br`) criem conta, confirmem, entrem, recuperem e alterem a senha, encerrem a sessão e (Servidores) solicitem o perfil de Administrador.
 
 ## 2. Atores
 

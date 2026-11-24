@@ -21,7 +21,7 @@ Administrador.
   - Reduzir dimensões deixando equipamento fora → recusado, listando os itens a reposicionar.
   - Sala nova gera planta vazia na proporção informada.
   - [Decisão P7] **Não há campo "código da sala"**; o texto "Sala C-104" do protótipo foi apenas demonstração.
-- **RF-007 — Equipamentos e periféricos:** equipamento tem nome, categoria (tipo equipamento), descrição, observações, **localização/bancada** (texto opcional, apenas informativo — [Decisão P8]), foto opcional e posição na planta. Periférico tem nome e categoria (tipo periférico) e está vinculado a exatamente um equipamento, na mesma sala dele, sem status próprio. Equipamento nasce Verde. Nome e categoria obrigatórios.
+- **RF-007 — Equipamentos e periféricos:** equipamento tem nome, categoria (tipo equipamento), descrição, observações, **localização/bancada** (texto opcional, até 100 caracteres, apenas informativo — [Decisão P8]), foto opcional e posição na planta. Periférico tem nome e categoria (tipo periférico) e está vinculado a exatamente um equipamento, na mesma sala dele, sem status próprio. Equipamento nasce Verde. Nome e categoria obrigatórios.
 - **RF-008 — Ícones:** cada item é exibido com o ícone da sua categoria, sempre com o indicador de status; trocar a categoria troca o ícone; trocar o ícone da categoria atualiza todos os itens.
 - **RF-011 — Exclusão com confirmação:** nenhum item é excluído sem confirmação; a confirmação lista o que será afetado (equipamentos e periféricos da sala, periféricos do equipamento, solicitações a descartar, chamados a cancelar). Desistir não altera nada. Exclusão lógica (RN-002).
 - **RF-012 — Upload de imagens (RN-005):** apenas JPG ou PNG verificados pelo conteúdo; até 5 MB; uma foto por equipamento, ocorrência e solicitação; EXIF removido. > 5 MB → 413; outro formato → 400; mensagem informa limite e formatos; texto já digitado é mantido; o formulário avisa para não fotografar pessoas.
@@ -70,4 +70,4 @@ Todas as entidades acima têm marcação de exclusão lógica (quem excluiu, qua
 
 - Depende de: SPEC-01, SPEC-02 (login e perfil).
 - O cancelamento de chamados e o descarte de solicitações na exclusão dependem da SPEC-07; até lá, a exclusão trata apenas sala, equipamentos e periféricos.
-- Pendência: tamanho máximo do campo "localização/bancada" — [Recomendação] 100 caracteres.
+- [Decisão 2026-11-24] Campo "localização/bancada": no máximo 100 caracteres.

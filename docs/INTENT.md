@@ -1,8 +1,8 @@
 # INTENT — GERLab
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
-- **Instituição:** IFPB – Campus Sousa
-- **Última atualização:** 2026-11-24
+- **Instituição:** IFSertãoPB – Campus Sousa (ALT-001)
+- **Última atualização:** 2026-11-24 (ALT-001)
 
 > Legenda de rastreabilidade: **[Fonte]** fato encontrado nas fontes; **[Decisão]** decisão confirmada pelo estudante na entrevista; **[Hipótese]** interpretação ainda não confirmada; **[Recomendação]** sugestão do agente.
 
@@ -10,7 +10,7 @@
 
 [Fonte: intent.md] Hoje não existe uma visão única de **onde está cada equipamento** nos laboratórios nem de **quais estão com defeito**. As falhas são percebidas por quem usa a sala, mas o aviso chega à equipe responsável de forma informal (conversa, mensagem, papel), sem registro, sem histórico e sem acompanhamento até o conserto.
 
-[Decisão] O sistema chama-se **GERLab** (o nome "LabSpace", usado no protótipo e nos documentos de origem, é o nome anterior) e atende o **IFPB – Campus Sousa**.
+[Decisão] O sistema chama-se **GERLab** (o nome "LabSpace", usado no protótipo e nos documentos de origem, é o nome anterior) e atende o **IFSertãoPB – Campus Sousa** (ALT-001; antes "IFPB – Campus Sousa", P1b).
 
 ## 2. Público-alvo e papéis
 
