@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {# Token CSRF lido pelo static/js/csrf-htmx.js e enviado em toda requisição HTMX #}
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  {# O HTMX 2 ignora respostas 4xx por padrão. Aqui pedimos que 403 e 409
+     também sejam mostradas (o servidor as manda para a área #avisos). #}
+  <meta name="htmx-config" content='{"responseHandling": [{"code": "204", "swap": false}, {"code": "[23]..", "swap": true}, {"code": "40[39]", "swap": true, "error": false}, {"code": "[45]..", "swap": false, "error": true}]}'>
   <title>{% block titulo %}GERLab{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.min.css') }}">
@@ -39,6 +42,8 @@
         <div class="alert alert-{{ 'info' if categoria == 'message' else categoria }}" role="alert">{{ mensagem }}</div>
       {% endfor %}
     {% endwith %}
+    {# Avisos de erro das ações HTMX (403/409) aparecem aqui #}
+    <div id="avisos" aria-live="polite"></div>
     {% block conteudo %}{% endblock %}
   </main>
   {% endblock %}

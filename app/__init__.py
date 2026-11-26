@@ -33,4 +33,12 @@ def create_app(nome_config=None):
     from app.cli import registrar_comandos
     registrar_comandos(app)
 
+    from app.erros import registrar_erros
+    registrar_erros(app)
+
+    # Nos templates: {% if pode(current_user, Acao.X) %} mostra o botão só
+    # para quem pode usá-lo. A conferência de verdade continua no servidor.
+    from app.domain.permissoes import Acao, pode
+    app.jinja_env.globals.update(pode=pode, Acao=Acao)
+
     return app

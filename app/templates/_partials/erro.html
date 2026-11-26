@@ -1,0 +1,19 @@
+{# Aviso de erro para pedidos HTMX: vai para a área #avisos do layout. #}
+{% if codigo == 409 %}
+<div class="alert alert-warning d-flex align-items-center gap-3" role="alert" data-erro="409">
+  <i class="bi bi-arrow-repeat fs-4" aria-hidden="true"></i>
+  <div class="flex-grow-1">
+    <strong>Esta informação mudou.</strong>
+    Outra pessoa alterou este item, ou a ação não vale mais. Nada foi alterado.
+  </div>
+  {# href vazio = abrir de novo a página atual, já com o estado novo #}
+  <a class="btn btn-sm btn-warning" href="">
+    <i class="bi bi-arrow-clockwise" aria-hidden="true"></i> Recarregar
+  </a>
+</div>
+{% else %}
+<div class="alert alert-danger d-flex align-items-center gap-3" role="alert" data-erro="403">
+  <i class="bi bi-shield-lock fs-4" aria-hidden="true"></i>
+  <div><strong>Acesso negado.</strong> Seu perfil não tem permissão para esta ação. Nada foi alterado.</div>
+</div>
+{% endif %}

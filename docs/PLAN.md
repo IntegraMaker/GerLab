@@ -38,6 +38,9 @@
 | `TentativaLogin` guarda o e-mail **digitado** (sem FK), o IP (até 45 caracteres) e também os logins certos | RNF-004; P-005 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #5) |
 | Bloqueio: as 5 últimas falhas (por e-mail **ou** IP) dentro de 15 min bloqueiam até 15 min após a 5ª falha; login certo não zera a contagem | RNF-004; P-005 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #5) |
 | Só FE1 (e-mail ou senha inválidos) conta como falha; tentativas durante o bloqueio não são anotadas e não estendem o castigo; bloqueado não confere a senha | RNF-004; UC03 FE4; P-005 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #5) |
+| Matriz em `app/domain/permissoes.py`: uma `Acao` por linha da SPEC-01 §3, escrita linha por linha (não é hierarquia: solicitar chamado e solicitar perfil de Administrador são só do Servidor); regras finas (ex.: só o responsável resolve) ficam nas SPECs de cada tema | SPEC-01 §3; RN-003; P-006 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #6) |
+| `@exige(Acao.X)` nas rotas: não autenticado → login com `next`; sem permissão ou conta desativada → 403 sem executar a rota; helper `pode` nos templates só para esconder botões | RN-003; P-006 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #6) |
+| 409 via `ConflitoDeEstado` (camada domain) ou `abort(409)`; em HTMX, 403/409 viram fragmento na área `#avisos` (HX-Retarget) e o 409 traz botão "Recarregar" (sem recarga automática); `htmx-config` permite swap de 403/409 | RN-003; P-006 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #6) |
 | Tokens com `secrets.token_urlsafe`; banco guarda só SHA-256 | RF-004 | Fonte: plan.md |
 | Imagens validadas e regravadas pelo Pillow sem EXIF, com nome aleatório, num volume fora de `static`, servidas por rota autenticada; `MAX_CONTENT_LENGTH` = 5 MB | RN-005, RF-012 | Fonte: plan.md |
 | Notificações gravadas na mesma transação da ação | RF-020, RF-021; P4-B | Decisão |

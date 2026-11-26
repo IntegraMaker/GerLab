@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block titulo %}Acesso negado — GERLab{% endblock %}
+{% block conteudo %}
+<div class="card border-0 shadow-sm mx-auto" style="max-width: 32rem;">
+  <div class="card-body p-4 text-center">
+    <i class="bi bi-shield-lock fs-1 text-danger" aria-hidden="true"></i>
+    <h1 class="h4 mt-2">Acesso negado</h1>
+    <p class="text-body-secondary mb-4">Seu perfil não tem permissão para esta ação. Nada foi alterado.</p>
+    <a class="btn btn-primary" href="{{ url_for('main.inicio') }}">
+      <i class="bi bi-house" aria-hidden="true"></i> Voltar ao início
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -65,6 +65,15 @@ anotadas na tabela `tentativa_login`.
 
 > Depois de alterar templates, reinicie a aplicação: `docker compose restart app`.
 
+### Permissões (403 e 409)
+
+As permissões seguem a matriz da SPEC-01 §3, escrita em `app/domain/permissoes.py`.
+Para proteger uma rota, use o decorador `@exige(Acao.X)` (`app/auth/decoradores.py`):
+quem não entrou vai para o login; quem não tem permissão recebe **403** e nada é alterado.
+Uma regra que descobre que o estado já mudou levanta `ConflitoDeEstado`
+(`app/domain/erros.py`), que vira **409**. Em pedidos HTMX, os avisos de 403 e 409
+aparecem na área `#avisos` do layout; o aviso de 409 tem o botão **Recarregar**.
+
 ### Estrutura
 
 - `app/` — aplicação Flask (`create_app` em `app/__init__.py`), com blueprints por área
