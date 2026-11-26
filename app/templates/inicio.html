@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block conteudo %}
-<h1>GERLab</h1>
-<p>Ambiente funcionando.</p>
+{# Página provisória da área logada; o dashboard chega na Issue #17. #}
+<h1 class="h3">Olá, {{ current_user.nome }}!</h1>
+<p class="text-body-secondary">Você entrou no GERLab. O painel dos laboratórios chega nas próximas etapas.</p>
 {% endblock %}

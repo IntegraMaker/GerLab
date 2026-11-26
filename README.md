@@ -51,6 +51,15 @@ com letra e número, diferente da parte antes do @). A senha é pedida duas veze
 docker compose exec app flask --app wsgi criar-admin
 ```
 
+### Entrar e sair
+
+Com a aplicação rodando, abra <http://localhost:5000/entrar> e entre com uma conta
+confirmada e ativa (por exemplo, o Administrador criado acima). A página inicial `/`
+exige login. A sessão expira após 2 horas sem atividade (`SESSAO_EXPIRA_HORAS`).
+O botão **Sair** encerra a sessão em todos os aparelhos da pessoa.
+
+> Depois de alterar templates, reinicie a aplicação: `docker compose restart app`.
+
 ### Estrutura
 
 - `app/` — aplicação Flask (`create_app` em `app/__init__.py`), com blueprints por área

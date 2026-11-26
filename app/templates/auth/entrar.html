@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block titulo %}Entrar — GERLab{% endblock %}
+
+{% block corpo %}
+<div class="container-fluid">
+  <div class="row min-vh-100">
+
+    {# Lado esquerdo: apresentação (protótipo, tela "Login") #}
+    <section class="col-lg-6 gerlab-apresentacao p-4 p-lg-5 d-flex flex-column gap-5" aria-label="Apresentação">
+      <div class="d-flex align-items-center gap-3">
+        <span class="gerlab-icone fs-5"><i class="bi bi-pc-display" aria-hidden="true"></i></span>
+        <div>
+          <div class="fw-bold fs-4 lh-sm">GERLab</div>
+          <div class="small texto-suave">IFSertãoPB – Campus Sousa</div>
+        </div>
+      </div>
+      <div class="mt-lg-auto">
+        <h1 class="fw-bold display-6">Os laboratórios do campus num só mapa.</h1>
+        <p class="fs-5 texto-suave mb-0">Veja onde está cada equipamento, se está funcionando e avise quando algo quebrar. O chamado é acompanhado até o conserto.</p>
+      </div>
+      <ul class="list-unstyled d-flex flex-column gap-3 mb-lg-auto">
+        <li class="d-flex align-items-center gap-3"><span class="gerlab-icone"><i class="bi bi-map" aria-hidden="true"></i></span>Planta baixa de cada sala, em escala real</li>
+        <li class="d-flex align-items-center gap-3"><span class="gerlab-icone"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></span>Reporte de falha em poucos toques</li>
+        <li class="d-flex align-items-center gap-3"><span class="gerlab-icone"><i class="bi bi-clock-history" aria-hidden="true"></i></span>Histórico completo de cada equipamento</li>
+      </ul>
+    </section>
+
+    {# Lado direito: formulário de login #}
+    <main class="col-lg-6 d-flex align-items-center justify-content-center py-5 px-3">
+      <form method="post" action="{{ url_for('auth.entrar', next=request.args.get('next')) }}"
+            class="card shadow-sm p-4 p-md-5 w-100 d-flex flex-column gap-3" style="max-width: 420px" novalidate>
+        {{ formulario.hidden_tag() }}
+
+        <div>
+          <h2 class="fw-bold mb-1">Entrar</h2>
+          <p class="text-body-secondary small mb-0">Use seu e-mail institucional.</p>
+        </div>
+
+        {% with mensagens = get_flashed_messages(with_categories=true) %}
+          {% for categoria, mensagem in mensagens %}
+            <div class="alert alert-{{ 'info' if categoria == 'message' else categoria }} small mb-0" role="alert">{{ mensagem }}</div>
+          {% endfor %}
+        {% endwith %}
+
+        <div>
+          {{ formulario.email.label(class="form-label fw-semibold small") }}
+          {{ formulario.email(class="form-control form-control-lg" ~ (" is-invalid" if formulario.email.errors else ""),
+                              placeholder="nome.sobrenome@ifpb.edu.br", autocomplete="username") }}
+          {% for e in formulario.email.errors %}<div class="invalid-feedback">{{ e }}</div>{% endfor %}
+        </div>
+
+        <div>
+          <div class="d-flex align-items-baseline">
+            {{ formulario.senha.label(class="form-label fw-semibold small") }}
+            {# Recuperação de senha: Issue #11 #}
+            <span class="ms-auto small fw-semibold text-body-secondary" title="Disponível em breve">Esqueci minha senha</span>
+          </div>
+          {{ formulario.senha(class="form-control form-control-lg" ~ (" is-invalid" if formulario.senha.errors else ""),
+                              autocomplete="current-password") }}
+          {% for e in formulario.senha.errors %}<div class="invalid-feedback">{{ e }}</div>{% endfor %}
+        </div>
+
+        {% if erro %}
+          <div class="alert alert-danger d-flex gap-2 align-items-start small mb-0" role="alert">
+            <i class="bi bi-exclamation-circle" aria-hidden="true"></i><span>{{ erro }}</span>
+          </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-gerlab btn-lg fw-bold">Entrar</button>
+
+        <div class="d-flex align-items-center gap-3 text-body-secondary small">
+          <hr class="flex-grow-1 my-0"> ou <hr class="flex-grow-1 my-0">
+        </div>
+        {# Cadastro: Issue #9 #}
+        <span class="btn btn-outline-gerlab btn-lg fw-bold disabled" aria-disabled="true">Criar conta</span>
+
+        {# Aviso de privacidade: Issue de privacidade (marco M8) #}
+        <p class="text-body-secondary text-center small mb-0">Ao entrar você concorda com o aviso de privacidade.</p>
+      </form>
+    </main>
+
+  </div>
+</div>
+{% endblock %}

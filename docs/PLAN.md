@@ -33,6 +33,8 @@
 | Coluna `versao` (optimistic locking) em Equipamento, Chamado e SolicitacaoChamado → 409 | RN-003 | Fonte: plan.md |
 | Módulo único de transições (`app/domain/transicoes.py`) que valida e grava o log na mesma transação | RF-014, RF-016 | Fonte: plan.md |
 | `Usuario.sessao_versao` incrementada ao desativar, redefinir ou trocar a senha | RF-004, RF-005, RF-027 | Fonte: plan.md |
+| Sair (`POST /sair`, com CSRF) também incrementa `sessao_versao`: a sessão é invalidada no servidor e a pessoa sai de todos os aparelhos | RF-026 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #4) |
+| Até o dashboard (P-017), a página inicial `/` é a área logada provisória e exige login | RF-026; teste 3 da P-004 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #4) |
 | Tokens com `secrets.token_urlsafe`; banco guarda só SHA-256 | RF-004 | Fonte: plan.md |
 | Imagens validadas e regravadas pelo Pillow sem EXIF, com nome aleatório, num volume fora de `static`, servidas por rota autenticada; `MAX_CONTENT_LENGTH` = 5 MB | RN-005, RF-012 | Fonte: plan.md |
 | Notificações gravadas na mesma transação da ação | RF-020, RF-021; P4-B | Decisão |

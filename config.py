@@ -1,5 +1,6 @@
 """Configurações do GERLab, lidas de variáveis de ambiente (SPEC-01 §7)."""
 import os
+from datetime import timedelta
 
 
 def _env_int(nome, padrao):
@@ -32,6 +33,14 @@ class Config:
     IMAGEM_MAX_MB = _env_int("IMAGEM_MAX_MB", 5)
     IMAGEM_FORMATOS = ("jpg", "jpeg", "png")
     PRIORIDADES = ("Baixa", "Média", "Alta")
+
+    # Sessão (SPEC-02 RNF-004): expira após SESSAO_EXPIRA_HORAS sem atividade.
+    # A cada requisição o prazo recomeça (SESSION_REFRESH_EACH_REQUEST).
+    PERMANENT_SESSION_LIFETIME = timedelta(hours=SESSAO_EXPIRA_HORAS)
+    SESSION_REFRESH_EACH_REQUEST = True
+    SESSION_COOKIE_HTTPONLY = True      # o JavaScript da página não lê o cookie
+    SESSION_COOKIE_SAMESITE = "Lax"     # outro site não envia o cookie em POST
+    SESSION_COOKIE_SECURE = False       # True em produção (cookie só via HTTPS)
 
 
 class DevelopmentConfig(Config):

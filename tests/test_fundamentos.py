@@ -43,14 +43,15 @@ def test_post_sem_token_csrf_retorna_400(app):
 def test_post_com_token_no_cabecalho_htmx_e_aceito(app):
     _registrar_rota_post(app)
     client = app.test_client()
-    token = _extrair_token(client.get("/").get_data(as_text=True))
+    token = _extrair_token(client.get("/entrar").get_data(as_text=True))
     resposta = client.post("/_teste-post", headers={"X-CSRFToken": token, "HX-Request": "true"})
     assert resposta.status_code == 200
 
 
 # 4. Layout base contém <meta name="csrf-token"> e carrega HTMX
 def test_layout_base_tem_csrf_token_e_htmx(client):
-    resposta = client.get("/")
+    # "/" exige login desde a Issue #4; /entrar usa o mesmo layout base
+    resposta = client.get("/entrar")
     html = resposta.get_data(as_text=True)
     assert resposta.status_code == 200
     assert _extrair_token(html)

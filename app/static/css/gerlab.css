@@ -1,0 +1,45 @@
+/* Estilos próprios do GERLab (cores do protótipo). O Bootstrap faz o resto. */
+:root {
+  --gerlab-verde-escuro: #123F1F;
+  --gerlab-verde: #1E7A34;
+  --gerlab-verde-claro: #DCEFE0;
+}
+
+.gerlab-apresentacao {
+  background: var(--gerlab-verde-escuro);
+  color: #FFFFFF;
+}
+.gerlab-apresentacao .texto-suave { color: var(--gerlab-verde-claro); }
+
+.gerlab-icone {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--gerlab-verde);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-gerlab {
+  --bs-btn-bg: var(--gerlab-verde);
+  --bs-btn-border-color: var(--gerlab-verde);
+  --bs-btn-color: #FFFFFF;
+  --bs-btn-hover-bg: var(--gerlab-verde-escuro);
+  --bs-btn-hover-border-color: var(--gerlab-verde-escuro);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-active-bg: var(--gerlab-verde-escuro);
+  --bs-btn-active-color: #FFFFFF;
+}
+
+.btn-outline-gerlab {
+  --bs-btn-color: var(--gerlab-verde);
+  --bs-btn-border-color: var(--gerlab-verde);
+  --bs-btn-hover-bg: var(--gerlab-verde);
+  --bs-btn-hover-border-color: var(--gerlab-verde);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-disabled-color: var(--gerlab-verde);
+  --bs-btn-disabled-border-color: var(--gerlab-verde);
+}
