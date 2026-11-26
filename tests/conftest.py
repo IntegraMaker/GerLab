@@ -8,6 +8,7 @@ import os
 import pytest
 
 from app import create_app
+from app.extensions import db
 
 
 @pytest.fixture
@@ -21,3 +22,13 @@ def app():
 @pytest.fixture
 def client(app):
     return app.test_client()
+
+
+@pytest.fixture
+def banco(app):
+    """Cria as tabelas no gerlab_test antes do teste e apaga tudo depois."""
+    with app.app_context():
+        db.create_all()
+        yield db
+        db.session.remove()
+        db.drop_all()

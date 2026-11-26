@@ -41,6 +41,16 @@ docker compose exec app flask --app wsgi db migrate -m "descrição"
 docker compose exec app flask --app wsgi db upgrade
 ```
 
+### Primeiro Administrador
+
+Depois de aplicar as migrações (`flask --app wsgi db upgrade`), crie o primeiro Administrador.
+O e-mail deve ser de Servidor (`@ifpb.edu.br`) e a senha segue a política (mínimo de 8 caracteres,
+com letra e número, diferente da parte antes do @). A senha é pedida duas vezes, sem aparecer na tela:
+
+```bash
+docker compose exec app flask --app wsgi criar-admin
+```
+
 ### Estrutura
 
 - `app/` — aplicação Flask (`create_app` em `app/__init__.py`), com blueprints por área

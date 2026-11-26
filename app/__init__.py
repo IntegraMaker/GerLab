@@ -21,7 +21,12 @@ def create_app(nome_config=None):
     migrate.init_app(app, db)
     csrf.init_app(app)
 
+    from app import models  # noqa: F401  (registra os modelos no SQLAlchemy)
+
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
+
+    from app.cli import registrar_comandos
+    registrar_comandos(app)
 
     return app
