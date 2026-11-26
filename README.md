@@ -58,6 +58,11 @@ confirmada e ativa (por exemplo, o Administrador criado acima). A página inicia
 exige login. A sessão expira após 2 horas sem atividade (`SESSAO_EXPIRA_HORAS`).
 O botão **Sair** encerra a sessão em todos os aparelhos da pessoa.
 
+Depois de 5 logins errados em 15 minutos, para o mesmo e-mail ou o mesmo IP, novas
+tentativas ficam bloqueadas por 15 minutos, mesmo com a senha certa
+(`LOGIN_MAX_FALHAS`, `LOGIN_JANELA_MINUTOS`, `LOGIN_BLOQUEIO_MINUTOS`). As tentativas ficam
+anotadas na tabela `tentativa_login`.
+
 > Depois de alterar templates, reinicie a aplicação: `docker compose restart app`.
 
 ### Estrutura

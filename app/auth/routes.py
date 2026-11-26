@@ -1,6 +1,6 @@
 from urllib.parse import urlsplit
 
-from flask import flash, redirect, render_template, request, session, url_for
+from flask import current_app, flash, redirect, render_template, request, session, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 
 from app.auth import bp
@@ -19,6 +19,10 @@ MENSAGENS = {
     # FE3
     ResultadoLogin.DESATIVADA:
         "Sua conta está desativada. Procure a coordenação do curso.",
+    # FE4 (Issue #5): genérica — não diz se o motivo é o e-mail ou o IP,
+    # nem se a conta existe. O tempo vem do config (LOGIN_BLOQUEIO_MINUTOS).
+    ResultadoLogin.BLOQUEADO:
+        "Muitas tentativas de entrar. Aguarde {minutos} minutos e tente de novo.",
 }
 
 
@@ -46,13 +50,18 @@ def entrar():
     erro = None
 
     if formulario.validate_on_submit():
-        resultado, usuario = autenticar(formulario.email.data, formulario.senha.data)
+        resultado, usuario = autenticar(
+            formulario.email.data, formulario.senha.data, ip=request.remote_addr
+        )
+        db.session.commit()   # grava a anotação no caderno da portaria
         if resultado is ResultadoLogin.OK:
             login_user(usuario)
             session.permanent = True   # passa a valer o prazo de 2 h sem atividade
             destino = _destino_seguro(request.args.get("next"))
             return redirect(destino or url_for("main.inicio"))
-        erro = MENSAGENS[resultado]
+        erro = MENSAGENS[resultado].format(
+            minutos=current_app.config["LOGIN_BLOQUEIO_MINUTOS"]
+        )
 
     formulario.senha.data = None   # a senha nunca volta para a página
     return render_template("auth/entrar.html", formulario=formulario, erro=erro)

@@ -35,6 +35,9 @@
 | `Usuario.sessao_versao` incrementada ao desativar, redefinir ou trocar a senha | RF-004, RF-005, RF-027 | Fonte: plan.md |
 | Sair (`POST /sair`, com CSRF) também incrementa `sessao_versao`: a sessão é invalidada no servidor e a pessoa sai de todos os aparelhos | RF-026 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #4) |
 | Até o dashboard (P-017), a página inicial `/` é a área logada provisória e exige login | RF-026; teste 3 da P-004 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #4) |
+| `TentativaLogin` guarda o e-mail **digitado** (sem FK), o IP (até 45 caracteres) e também os logins certos | RNF-004; P-005 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #5) |
+| Bloqueio: as 5 últimas falhas (por e-mail **ou** IP) dentro de 15 min bloqueiam até 15 min após a 5ª falha; login certo não zera a contagem | RNF-004; P-005 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #5) |
+| Só FE1 (e-mail ou senha inválidos) conta como falha; tentativas durante o bloqueio não são anotadas e não estendem o castigo; bloqueado não confere a senha | RNF-004; UC03 FE4; P-005 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #5) |
 | Tokens com `secrets.token_urlsafe`; banco guarda só SHA-256 | RF-004 | Fonte: plan.md |
 | Imagens validadas e regravadas pelo Pillow sem EXIF, com nome aleatório, num volume fora de `static`, servidas por rota autenticada; `MAX_CONTENT_LENGTH` = 5 MB | RN-005, RF-012 | Fonte: plan.md |
 | Notificações gravadas na mesma transação da ação | RF-020, RF-021; P4-B | Decisão |
@@ -267,6 +270,7 @@ Cada Issue usará o modelo obrigatório do `AGENTS.md` (atividades, validação 
 | :--- | :--- |
 | Envio real de e-mail (P-007 em produção) | Senha de app do Gmail configurada pelo estudante no `.env` |
 | HTTPS e implantação | Servidor e domínio de produção não definidos |
+| IP real no bloqueio de login (P-005) em produção | Atrás de proxy reverso, `request.remote_addr` é o IP do proxy: configurar `ProxyFix` na implantação. Risco registrado: computadores de um laboratório atrás do mesmo IP (NAT) podem ser bloqueados juntos; mudar a regra da SPEC exige a skill de alteração |
 
 ## 7. Fora do MVP (backlog futuro, sem Issue agora)
 
