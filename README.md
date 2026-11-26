@@ -65,6 +65,21 @@ anotadas na tabela `tentativa_login`.
 
 > Depois de alterar templates, reinicie a aplicação: `docker compose restart app`.
 
+### E-mails (fila e carteiro)
+
+O sistema nunca espera um e-mail sair: ele grava a mensagem na tabela `email_pendente`
+e o serviço `mailer` (`flask enviar-emails`) entrega a cada 10 segundos
+(`EMAIL_INTERVALO_SEGUNDOS`), com até 3 tentativas (`EMAIL_MAX_TENTATIVAS`); depois disso
+o e-mail fica como `FALHA`. Em desenvolvimento (`EMAIL_TRANSPORTE=log`) o e-mail só aparece no log:
+
+```bash
+docker compose logs -f mailer
+```
+
+Para uma única volta manual: `docker compose exec app flask --app wsgi enviar-emails --uma-vez`.
+Em produção, use `EMAIL_TRANSPORTE=smtp` e preencha `SMTP_USUARIO`, `SMTP_SENHA` (senha de app
+do Gmail) e `EMAIL_REMETENTE` apenas no `.env`.
+
 ### Permissões (403 e 409)
 
 As permissões seguem a matriz da SPEC-01 §3, escrita em `app/domain/permissoes.py`.

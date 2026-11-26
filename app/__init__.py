@@ -1,4 +1,5 @@
 """Fábrica da aplicação GERLab."""
+import logging
 import os
 
 from flask import Flask
@@ -11,6 +12,8 @@ def create_app(nome_config=None):
     nome_config = nome_config or os.environ.get("FLASK_CONFIG", "development")
     app = Flask(__name__)
     app.config.from_object(config_por_nome[nome_config])
+    # Mostra mensagens INFO no log (ex.: o e-mail "enviado" pelo TransporteLog).
+    app.logger.setLevel(logging.INFO)
 
     if not app.config.get("SECRET_KEY"):
         raise RuntimeError("SECRET_KEY não definida (veja .env.example).")

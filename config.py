@@ -34,6 +34,18 @@ class Config:
     IMAGEM_FORMATOS = ("jpg", "jpeg", "png")
     PRIORIDADES = ("Baixa", "Média", "Alta")
 
+    # E-mails (SPEC-08 RF-021). "log" só escreve no log (desenvolvimento e
+    # testes); "smtp" envia de verdade pelo Gmail do projeto (produção).
+    EMAIL_TRANSPORTE = os.environ.get("EMAIL_TRANSPORTE", "log")
+    EMAIL_MAX_TENTATIVAS = _env_int("EMAIL_MAX_TENTATIVAS", 3)
+    EMAIL_INTERVALO_SEGUNDOS = _env_int("EMAIL_INTERVALO_SEGUNDOS", 10)
+    EMAIL_REMETENTE = os.environ.get("EMAIL_REMETENTE", "")
+    SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com")
+    SMTP_PORTA = _env_int("SMTP_PORTA", 587)
+    SMTP_USUARIO = os.environ.get("SMTP_USUARIO", "")
+    SMTP_SENHA = os.environ.get("SMTP_SENHA", "")      # senha de app: só no .env
+    SMTP_TIMEOUT_SEGUNDOS = _env_int("SMTP_TIMEOUT_SEGUNDOS", 20)
+
     # Sessão (SPEC-02 RNF-004): expira após SESSAO_EXPIRA_HORAS sem atividade.
     # A cada requisição o prazo recomeça (SESSION_REFRESH_EACH_REQUEST).
     PERMANENT_SESSION_LIFETIME = timedelta(hours=SESSAO_EXPIRA_HORAS)
@@ -51,6 +63,7 @@ class TestingConfig(Config):
     TESTING = True
     SECRET_KEY = os.environ.get("SECRET_KEY", "chave-apenas-para-testes")
     SQLALCHEMY_DATABASE_URI = os.environ.get("TEST_DATABASE_URL")
+    EMAIL_TRANSPORTE = "log"   # testes nunca enviam e-mail de verdade
 
 
 class ProductionConfig(Config):

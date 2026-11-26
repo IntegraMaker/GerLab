@@ -29,5 +29,20 @@ services:
       db:
         condition: service_healthy
 
+  # O "carteiro" (SPEC-08 RF-021): mesma imagem da app, outro comando.
+  # Entrega os e-mails da fila a cada EMAIL_INTERVALO_SEGUNDOS.
+  mailer:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    command: ["flask", "--app", "wsgi", "enviar-emails"]
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+
 volumes:
   dados_db:

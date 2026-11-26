@@ -6,3 +6,4 @@ from app.domain.exclusao import ExclusaoLogicaMixin  # noqa: F401  (ativa o filt
 from app.models.usuario import Perfil, Usuario  # noqa: F401
 from app.models.log_evento import LogEvento, RegistroImutavelError  # noqa: F401
 from app.models.tentativa_login import TentativaLogin  # noqa: F401
+from app.models.email_pendente import EmailPendente, EstadoEmail  # noqa: F401
