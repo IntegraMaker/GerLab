@@ -33,6 +33,9 @@ def create_app(nome_config=None):
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp)
 
+    from app.notifications import bp as notifications_bp
+    app.register_blueprint(notifications_bp)
+
     from app.cli import registrar_comandos
     registrar_comandos(app)
 

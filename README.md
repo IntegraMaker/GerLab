@@ -65,6 +65,14 @@ anotadas na tabela `tentativa_login`.
 
 > Depois de alterar templates, reinicie a aplicação: `docker compose restart app`.
 
+### Notificações (avisos dentro do sistema)
+
+Os avisos ficam na tabela `notificacao` e são criados por `notificar(...)`
+(`app/services/notificacoes.py`), que nunca avisa o autor da ação. O sino no cabeçalho mostra
+as não lidas e se atualiza sozinho a cada 60 segundos (HTMX). Em <http://localhost:5000/avisos>
+cada pessoa vê só os próprios avisos, abre um (marca como lido e leva ao item; se o item foi
+excluído, mostra "item excluído") ou marca todos como lidos.
+
 ### E-mails (fila e carteiro)
 
 O sistema nunca espera um e-mail sair: ele grava a mensagem na tabela `email_pendente`

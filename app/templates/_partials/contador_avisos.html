@@ -1,0 +1,21 @@
+{# Sino de notificações do cabeçalho (protótipo: botão com contador).
+   Funciona sem JavaScript (é um link para /avisos). Com HTMX, ele mesmo se
+   atualiza a cada 60 segundos, trocando-se pela versão nova (outerHTML). #}
+{% if nao_lidas == 0 %}
+  {% set rotulo = "Notificações, nenhuma não lida" %}
+{% elif nao_lidas == 1 %}
+  {% set rotulo = "Notificações, 1 não lida" %}
+{% else %}
+  {% set rotulo = "Notificações, " ~ nao_lidas ~ " não lidas" %}
+{% endif %}
+<a id="contador-avisos" href="{{ url_for('notifications.lista') }}"
+   class="btn btn-outline-secondary position-relative"
+   aria-label="{{ rotulo }}" title="{{ rotulo }}"
+   hx-get="{{ url_for('notifications.contador') }}" hx-trigger="every 60s" hx-swap="outerHTML">
+  <i class="bi bi-bell" aria-hidden="true"></i>
+  {% if nao_lidas %}
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" aria-hidden="true">
+      {{ "99+" if nao_lidas > 99 else nao_lidas }}
+    </span>
+  {% endif %}
+</a>

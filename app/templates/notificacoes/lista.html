@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block titulo %}Notificações — GERLab{% endblock %}
+{% block conteudo %}
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+  <h1 class="h4 m-0"><i class="bi bi-bell" aria-hidden="true"></i> Notificações</h1>
+  {% if nao_lidas %}
+    <form method="post" action="{{ url_for('notifications.marcar_todas') }}" class="m-0">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button type="submit" class="btn btn-sm btn-outline-secondary">
+        <i class="bi bi-check2-all" aria-hidden="true"></i> Marcar todas como lidas
+      </button>
+    </form>
+  {% endif %}
+</div>
+
+{% if not avisos %}
+  <p class="text-body-secondary">Você não tem notificações.</p>
+{% else %}
+  <ul class="list-group">
+    {% for aviso in avisos %}
+      <li class="list-group-item d-flex align-items-start gap-3{% if not aviso.lida %} fw-semibold{% endif %}" data-aviso="{{ aviso.id }}">
+        {# Ícone + texto: o estado nunca é mostrado só pela cor (RNF-005) #}
+        {% if aviso.lida %}
+          <i class="bi bi-envelope-open text-body-secondary mt-1" aria-hidden="true"></i>
+        {% else %}
+          <i class="bi bi-envelope-fill text-primary mt-1" aria-hidden="true"></i>
+        {% endif %}
+        <div class="flex-grow-1">
+          <div>
+            {% if not aviso.lida %}<span class="visually-hidden">Não lida: </span>{% endif %}
+            {{ aviso.texto }}
+          </div>
+          <div class="small text-body-secondary fw-normal">
+            {{ aviso.criada_em.strftime("%d/%m/%Y, %H:%M") }}
+            {% if item_excluido(aviso) %}
+              · <span class="badge text-bg-secondary"><i class="bi bi-trash" aria-hidden="true"></i> item excluído</span>
+            {% endif %}
+          </div>
+        </div>
+        {# Abrir marca como lido: é POST com CSRF, porque muda dados #}
+        <form method="post" action="{{ url_for('notifications.abrir', aviso_id=aviso.id) }}" class="m-0">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button type="submit" class="btn btn-sm btn-link">Abrir</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}

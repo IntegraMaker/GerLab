@@ -44,6 +44,9 @@
 | `EmailPendente` (PENDENTE/ENVIADO/FALHA, tentativas, último erro, assunto até 200); `enfileirar_email` sem commit próprio (vai na transação da ação); sem campo "tipo" por enquanto | RF-021; P-007 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #7) |
 | Carteiro (`processar_fila`): nova tentativa na volta seguinte (10 s), sem espera crescente; qualquer exceção conta como falha; commit por e-mail; até 50 por volta | RF-021; P-007 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #7) |
 | `flask enviar-emails` com `--uma-vez`; erro não derruba o carteiro; serviço `mailer` com `restart: unless-stopped`; `EMAIL_TRANSPORTE=log` por padrão (testes forçam log); logger da app em INFO | RF-021; P-007 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #7) |
+| `Notificacao` por destinatário (texto até 300, `entidade` + `entidade_id` opcionais, lida = `lida_em`); `notificar` sem commit próprio, pula o autor e não repete destinatário | RF-020; RF-021; P-008 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #8) |
+| Aviso de outra pessoa → 404; "Abrir" é POST (marca como lido); lista com os 50 mais recentes; item excluído mostra etiqueta e mensagem; destinos registrados por `registrar_destino` nas próximas Issues | RF-020; P-008 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #8) |
+| Sino no cabeçalho (texto acessível do protótipo), atualizado por HTMX a cada 60 s; funciona como link sem JS; sessão encerrada → 286 (para de atualizar); acima de 99 mostra "99+" | RF-020; UC07; P-008 | Decisão (aprovada pelo estudante em 2026-11-26, Issue #8) |
 | Tokens com `secrets.token_urlsafe`; banco guarda só SHA-256 | RF-004 | Fonte: plan.md |
 | Imagens validadas e regravadas pelo Pillow sem EXIF, com nome aleatório, num volume fora de `static`, servidas por rota autenticada; `MAX_CONTENT_LENGTH` = 5 MB | RN-005, RF-012 | Fonte: plan.md |
 | Notificações gravadas na mesma transação da ação | RF-020, RF-021; P4-B | Decisão |
