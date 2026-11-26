@@ -1,0 +1,6 @@
+#!/bin/sh
+# Executado só na primeira inicialização do volume do PostgreSQL:
+# cria o banco separado usado pelo pytest.
+set -e
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" \
+  -c "CREATE DATABASE \"$POSTGRES_TEST_DB\";"
