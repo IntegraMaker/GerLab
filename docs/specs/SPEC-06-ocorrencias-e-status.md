@@ -1,7 +1,7 @@
 # SPEC-06 — Ocorrências e status do equipamento
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
-- **Issues:** [#24](https://github.com/IntegraMaker/GerLab/issues/24) P-024, [#25](https://github.com/IntegraMaker/GerLab/issues/25) P-025, [#26](https://github.com/IntegraMaker/GerLab/issues/26) P-026, [#27](https://github.com/IntegraMaker/GerLab/issues/27) P-027, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
+- **Issues:** [#24](https://github.com/IntegraMaker/GerLab/issues/24) P-024, [#25](https://github.com/IntegraMaker/GerLab/issues/25) P-025, [#26](https://github.com/IntegraMaker/GerLab/issues/26) P-026, [#27](https://github.com/IntegraMaker/GerLab/issues/27) P-027, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GerLab](https://github.com/users/IntegraMaker/projects/9)
 - **Fontes:** `spec.md` §2.1, §2.2, RF14, RF15, RF31, RN03, RN05; `casos-de-uso.md` UC08, UC09, UC21; protótipo telas "Planta", "Celular" e "Fila"
 - **Casos de uso:** UC08, UC09, UC21
 

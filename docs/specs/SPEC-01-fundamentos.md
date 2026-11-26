@@ -1,7 +1,7 @@
 # SPEC-01 — Fundamentos e regras transversais
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
-- **Issues:** [#1](https://github.com/IntegraMaker/GerLab/issues/1) P-001, [#3](https://github.com/IntegraMaker/GerLab/issues/3) P-003, [#6](https://github.com/IntegraMaker/GerLab/issues/6) P-006, [#36](https://github.com/IntegraMaker/GerLab/issues/36) P-036, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
+- **Issues:** [#1](https://github.com/IntegraMaker/GerLab/issues/1) P-001, [#3](https://github.com/IntegraMaker/GerLab/issues/3) P-003, [#6](https://github.com/IntegraMaker/GerLab/issues/6) P-006, [#36](https://github.com/IntegraMaker/GerLab/issues/36) P-036, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GerLab](https://github.com/users/IntegraMaker/projects/9)
 - **Fontes:** `spec.md` §1, §3, §5, §6; `plan.md` §2; entrevista P2, P3, P4, P6
 - **Convenção de IDs:** os identificadores preservam a numeração das fontes (RF01 → RF-001, RN01 → RN-001, RNF01 → RNF-001, UC01 → UC01). Números de itens fora do MVP ficam vagos.
 

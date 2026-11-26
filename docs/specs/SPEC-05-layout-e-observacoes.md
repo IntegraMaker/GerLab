@@ -1,7 +1,7 @@
 # SPEC-05 — Layout da sala e observações
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
-- **Issues:** [#21](https://github.com/IntegraMaker/GerLab/issues/21) P-021, [#22](https://github.com/IntegraMaker/GerLab/issues/22) P-022, [#23](https://github.com/IntegraMaker/GerLab/issues/23) P-023, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1)
+- **Issues:** [#21](https://github.com/IntegraMaker/GerLab/issues/21) P-021, [#22](https://github.com/IntegraMaker/GerLab/issues/22) P-022, [#23](https://github.com/IntegraMaker/GerLab/issues/23) P-023, [#37](https://github.com/IntegraMaker/GerLab/issues/37) P-037 — card no Project [GerLab](https://github.com/users/IntegraMaker/projects/9)
 - **Fontes:** `spec.md` RF09, RF10, RF13; `casos-de-uso.md` UC10, UC11; `plan.md` (posição livre em grade de 0,5 m); protótipo tela "Planta" (botões "Editar layout", "Mover", "Editar observação")
 - **Casos de uso:** UC10, UC11
 

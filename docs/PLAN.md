@@ -2,7 +2,7 @@
 
 - **Status:** Aprovada pelo estudante em 2026-11-24
 - **Base:** `docs/INTENT.md`, `docs/specs/SPEC-01` a `SPEC-09`, `AGENTS.md`
-- **Rastreabilidade:** cada item P-NNN é uma Issue real em [IntegraMaker/GerLab](https://github.com/IntegraMaker/GerLab/issues) (coluna "Issue" da §5), adicionada como card vinculado no Project [GERLab — Desenvolvimento](https://github.com/users/lucascaetano222/projects/1) (visões Board e Tabela; colunas Backlog, Ready, In Progress, In Review, Done). A pasta do desafio usa o número da Issue (`desafios/issue-NNN/`).
+- **Rastreabilidade:** cada item P-NNN é uma Issue real em [IntegraMaker/GerLab](https://github.com/IntegraMaker/GerLab/issues) (coluna "Issue" da §5), adicionada como card vinculado no Project [GerLab](https://github.com/users/IntegraMaker/projects/9) (conta IntegraMaker, ligado ao repositório; visões em quadro e tabela; colunas Backlog, Ready, In progress, In review, Done). A pasta do desafio usa o número da Issue (`desafios/issue-NNN/`).
 
 ## 1. Stack (AGENTS.md) e bibliotecas aprovadas
 
